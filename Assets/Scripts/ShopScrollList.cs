@@ -23,11 +23,17 @@ public class ShopScrollList : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        RefreshDisplay();
+
+    }
+
+    void RefreshDisplay()
+    {
+        AddButtons();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -37,6 +43,10 @@ public class ShopScrollList : MonoBehaviour {
         {
             Item item = itemList[i];
             GameObject newButton = buttonObjectPool.GetObject();
+            newButton.transform.SetParent(contentPanel);
+
+            SampleButton sampleButton = newButton.GetComponent<SampleButton>();
+            sampleButton.Setup(item, this);
         }
     }
 }

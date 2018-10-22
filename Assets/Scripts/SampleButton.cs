@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SampleButton : MonoBehaviour {
-    public Button button;
+    public Button buttonComponent;
     public Text nameLabel;
-    public Text pricelabel;
-    public Image icon;
+    public Image iconImage;
+    public Text priceText;
 
-	// Use this for initialization
-	void Start () {
+    private Item item;
+    private ShopScrollList scrollList;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -19,8 +22,13 @@ public class SampleButton : MonoBehaviour {
 		
 	}
 
-    void Setup()
+    public void Setup(Item currentItem, ShopScrollList currentScrollList)
     {
+        item = currentItem;
+        nameLabel.text = item.itemName;
+        iconImage.sprite = item.icon;
+        priceText.text = item.price.ToString();
+        scrollList = currentScrollList;
 
     }
 }
