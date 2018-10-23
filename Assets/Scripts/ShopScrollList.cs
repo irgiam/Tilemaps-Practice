@@ -29,6 +29,8 @@ public class ShopScrollList : MonoBehaviour {
 
     void RefreshDisplay()
     {
+        myGoldDisplay.text = "Gold: " + gold.ToString();
+        RemoveButtons();
         AddButtons();
     }
 
@@ -47,6 +49,49 @@ public class ShopScrollList : MonoBehaviour {
 
             SampleButton sampleButton = newButton.GetComponent<SampleButton>();
             sampleButton.Setup(item, this);
+        }
+    }
+
+    private void RemoveButtons()
+    {
+        while (contentPanel.childCount > 0)
+        {
+            GameObject toRemove = transform.GetChild(0).gameObject;
+            buttonObjectPool.ReturnObject(toRemove);
+        }
+    }
+
+    public void TryTransferItemToOtherShop(Item item)
+    {
+        if (otherShop.gold >= item.price)
+        {
+            gold += item.price;
+            otherShop.gold -= item.price;
+
+            AddItem(item, otherShop);
+            RemoveItem(item, this);
+
+            RefreshDisplay();
+            otherShop.RefreshDisplay();
+            Debug.Log("enough gold");
+
+        }
+        Debug.Log("attempted");
+    }
+
+    void AddItem(Item itemToAdd, ShopScrollList shopList)
+    {
+        shopList.itemList.Add(itemToAdd);
+    }
+
+    private void RemoveItem(Item itemToRemove, ShopScrollList shopList)
+    {
+        for (int i = shopList.itemList.Count - 1; i >= 0; i--)
+        {
+            if (shopList.itemList[i] == itemToRemove)
+            {
+                shopList.itemList.RemoveAt(i);
+            }
         }
     }
 }

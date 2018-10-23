@@ -14,7 +14,7 @@ public class SampleButton : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        buttonComponent.onClick.AddListener(HandleClick);
 	}
 	
 	// Update is called once per frame
@@ -30,5 +30,10 @@ public class SampleButton : MonoBehaviour {
         priceText.text = item.price.ToString();
         scrollList = currentScrollList;
 
+    }
+
+    public void HandleClick()
+    {
+        scrollList.TryTransferItemToOtherShop(item);
     }
 }
