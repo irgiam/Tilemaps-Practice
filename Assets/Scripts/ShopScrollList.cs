@@ -56,7 +56,7 @@ public class ShopScrollList : MonoBehaviour {
     {
         while (contentPanel.childCount > 0)
         {
-            GameObject toRemove = transform.GetChild(0).gameObject;
+            GameObject toRemove = transform.GetChild(0).gameObject; //mengambil chil pertama dr gameobject ini
             buttonObjectPool.ReturnObject(toRemove);
         }
     }
