@@ -10,6 +10,7 @@ public class DropDownTest : MonoBehaviour
     public Dropdown dropdown;
     public Text selectedName;
     
+    
     public void DropdownIndexChanged(int index)
     {
         selectedName.text = names[index];
@@ -24,4 +25,6 @@ public class DropDownTest : MonoBehaviour
     {
         dropdown.AddOptions(names);
     }
+
+    
 }

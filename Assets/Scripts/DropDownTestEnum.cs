@@ -17,6 +17,8 @@ public class DropDownTestEnum : MonoBehaviour
     public Dropdown dropdown;
     public Text selectedName;
 
+    public GameObject clock;
+
     public void DropdownIndexChanged(int index)
     {
         nama name = (nama)index;
@@ -41,5 +43,10 @@ public class DropDownTestEnum : MonoBehaviour
         string[] enumNama = Enum.GetNames(typeof(nama));
         List<string> names = new List<string>(enumNama);
         dropdown.AddOptions(names);
+    }
+
+    public void ToggleChange(bool toggleValue)
+    {
+        clock.gameObject.SetActive(toggleValue);
     }
 }
