@@ -8,13 +8,24 @@ public class CalendarTest : MonoBehaviour
 {
     private DateTime _date = new DateTime(2000, 1, 1);
     public Text dateText;
-    
+    public float timeTest = 5;
+
+    private void FixedUpdate()
+    {
+        timeTest -= Time.deltaTime;
+       if (timeTest <= 0)
+        {
+            _date = _date.AddMonths(1);
+            timeTest = 5;
+        }
+    }
+
     void Awake()
     {
         dateText = this.GetComponent<Text>();
     }
 
-    private void Start()
+    private void Update()
     {
         dateText.text = this.ToString();
     }
