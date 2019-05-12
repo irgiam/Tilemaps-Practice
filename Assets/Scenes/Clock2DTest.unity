@@ -713,6 +713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dateText: {fileID: 0}
+  timeTest: 5
+  normalizeTest: 6.7
 --- !u!114 &624642625
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class CalendarTest : MonoBehaviour
     private DateTime _date = new DateTime(2000, 1, 1);
     public Text dateText;
     public float timeTest = 5;
+    public float normalizeTest;
 
     private void FixedUpdate()
     {
@@ -18,6 +19,12 @@ public class CalendarTest : MonoBehaviour
             _date = _date.AddMonths(1);
             timeTest = 5;
         }
+    }
+
+    private void Start()
+    {
+        normalizeTest = normalizeTest % 1;
+        Debug.Log(normalizeTest);
     }
 
     void Awake()
