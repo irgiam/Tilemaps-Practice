@@ -34,7 +34,7 @@ public class CalendarTest : MonoBehaviour
 
     private void Update()
     {
-        dateText.text = this.ToString();
+        
     }
 
     public void AddDay()
