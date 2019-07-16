@@ -574,7 +574,10 @@ GameObject:
   - component: {fileID: 593242807}
   - component: {fileID: 593242809}
   - component: {fileID: 593242808}
+  - component: {fileID: 593242811}
   - component: {fileID: 593242810}
+  - component: {fileID: 593242812}
+  - component: {fileID: 593242813}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -647,21 +650,68 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593242806}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e7b55f796654e4d90febed7d7b21ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fd40ae8f93eef84caf85ad5c01cbb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textClock: {fileID: 658092958}
+--- !u!114 &593242811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593242806}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c09759a9e5a46e4ab0eeafb73d2ddcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hours: {fileID: 870013331}
+  minutes: {fileID: 1833023152}
+  analog: 1
+--- !u!114 &593242812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593242806}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7b85a93757eef44b29bbcd9515d8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   totalGameSeconds: 0
-  time: {fileID: 658092958}
   seconds: 0
   minutes: 0
   hours: 0
   days: 0
   months: 0
   years: 0
-  hoursClock: {fileID: 870013331}
-  minutesClock: {fileID: 1833023152}
+--- !u!114 &593242813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593242806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3b865eeca495344b15cadf9cce51e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalGameSeconds: 0
+  seconds: 0
+  minutes: 0
+  hours: 0
+  days: 0
+  months: 0
+  years: 0
+  analogHours: {fileID: 870013331}
+  analogMinutes: {fileID: 1833023152}
+  digitalClock: {fileID: 658092958}
 --- !u!1 &624642622
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,9 +762,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b85c5409c57014f83116e5fcf0ac34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dateText: {fileID: 0}
+  dateText: {fileID: 624642625}
   timeTest: 5
-  normalizeTest: 6.7
+  normalizeTest: 0
 --- !u!114 &624642625
 MonoBehaviour:
   m_ObjectHideFlags: 0

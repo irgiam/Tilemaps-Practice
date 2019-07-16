@@ -6,7 +6,7 @@ using System;
 public class ClockAnimator : MonoBehaviour
 {
     private const float
-       hoursToDegrees = 360f / 60f,
+       hoursToDegrees = 360f / 12f,
        minutesToDegrees = 360f / 60f;
 
     public Transform hours, minutes;
