@@ -50,7 +50,8 @@ public class ArrayTest : MonoBehaviour
 
     private void Start()
     {
-        for(int i=0; i<3; i++)
+        Screen.SetResolution(912, 513, true);
+        for (int i=0; i<3; i++)
         {
             buttons.Add(GenerateButton());
         }
